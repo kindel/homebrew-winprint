@@ -1,32 +1,34 @@
 # Template rendered by the release pipeline (release.yml -> brew job) and pushed to the
 # kindel/homebrew-winprint tap; the placeholders are filled with each stable release's
-# version, download base URL, and per-arch SHA256s. This is the free TUI (`wp`); the free MAUI
-# GUI ships alongside it as the tap's *cask* (packaging/homebrew/Casks/winprint.rb).
+# version, download base URL, and per-arch SHA256s. This is the standalone free TUI (`wp`) — used
+# on Linux and for CLI-only macOS installs. The free MAUI GUI ships as the tap's *cask*
+# (packaging/homebrew/Casks/winprint.rb), which on macOS also embeds `wp`; the cask therefore
+# conflicts with this formula (both provide `wp`).
 class Winprint < Formula
   desc "Advanced source code and text file printing terminal UI"
   homepage "https://github.com/kindel/winprint"
-  version "2.6.5"
+  version "2.6.7"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/tig/winprint/releases/download/v2.6.5/wp-osx-arm64.tar.gz"
-      sha256 "37d5befad1b0d437fa9cff23634961a0c0271237fec491dedf21976b68645af8"
+      url "https://github.com/tig/winprint/releases/download/v2.6.7/wp-osx-arm64.tar.gz"
+      sha256 "91d0f0675088371c6b8e8fe9fa4f9e029c26bc31ad1c5dc7f708eb99e6bdf7d7"
     end
     on_intel do
-      url "https://github.com/tig/winprint/releases/download/v2.6.5/wp-osx-x64.tar.gz"
-      sha256 "d2da8883acc1a908b6e55302e38b4e7c934d51de41209a44015d164da8bf6ce6"
+      url "https://github.com/tig/winprint/releases/download/v2.6.7/wp-osx-x64.tar.gz"
+      sha256 "08076ce2d54767d6a44ace3d1d2e99eadbefed2ca7b8459c8d05fb3b9c355e81"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/tig/winprint/releases/download/v2.6.5/wp-linux-arm64.tar.gz"
-      sha256 "bfa93b5b65eb3f6c61c1ffc7f5c163c95cac977173cbb68f87fb40f1fdc1b686"
+      url "https://github.com/tig/winprint/releases/download/v2.6.7/wp-linux-arm64.tar.gz"
+      sha256 "ee9910de8333a4d88717665f80206fdf8e7bfb314663b145ce75db48a840a3fd"
     end
     on_intel do
-      url "https://github.com/tig/winprint/releases/download/v2.6.5/wp-linux-x64.tar.gz"
-      sha256 "ea233ce0bbb292a919366a23c7976ad7654ca8d2b18d5ffd956b714f689e22f0"
+      url "https://github.com/tig/winprint/releases/download/v2.6.7/wp-linux-x64.tar.gz"
+      sha256 "5b045d6fb68feb08dee51eb459531b7915d03c73a22659bbfc5e982957b3b19f"
     end
   end
 

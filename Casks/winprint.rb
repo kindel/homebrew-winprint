@@ -1,25 +1,33 @@
 # Template rendered by the release pipeline (release.yml -> brew job) and pushed to the
 # kindel/homebrew-winprint tap. Placeholders are filled with each stable release's version,
 # download base URL, and per-arch SHA256s. This is the free MAUI GUI (WinPrint.app), a
-# notarized Developer ID build distributed directly (NOT the App Store). The TUI (`wp`) ships
-# separately as the Homebrew *formula*; `brew upgrade` handles updates for both.
+# notarized Developer ID build distributed directly (NOT the App Store).
+#
+# The GUI bundle ALSO embeds the `wp` TUI (release.yml copies the self-contained CLI payload into
+# WinPrint.app/Contents/Helpers/wp), so this single cask install delivers BOTH the GUI and the `wp`
+# command — the `binary` stanza below symlinks the embedded wp onto PATH. The standalone Homebrew
+# *formula* still ships `wp` for Linux and CLI-only installs; the cask therefore conflicts with the
+# formula (both would provide `wp`).
 cask "winprint" do
-  version "2.6.5"
+  version "2.6.7"
 
   on_arm do
-    url "https://github.com/tig/winprint/releases/download/v2.6.5/WinPrint-osx-arm64.app.zip"
-    sha256 "86fbbfb4c997dd2f89f9aa63b238cc50f8d13ee14449c6f3a3e85e0a31f16f62"
+    url "https://github.com/tig/winprint/releases/download/v2.6.7/WinPrint-osx-arm64.app.zip"
+    sha256 "621fa6889ca6b4126a3251e3826a90b40b5fbe0ad76273127bac110de20176a6"
   end
   on_intel do
-    url "https://github.com/tig/winprint/releases/download/v2.6.5/WinPrint-osx-x64.app.zip"
-    sha256 "237c93a2aab19e7468b068ed7fcab83d4c470a75181644d4fb2c9d3a5772622f"
+    url "https://github.com/tig/winprint/releases/download/v2.6.7/WinPrint-osx-x64.app.zip"
+    sha256 "71fd5c07b47e4157dfb7026c4245d18ee1dd6bb5fec34699c95b50c60cb5997f"
   end
 
   name "WinPrint"
-  desc "Advanced source code and text file printing GUI"
+  desc "Advanced source code and text file printing GUI (bundles the wp TUI)"
   homepage "https://github.com/kindel/winprint"
 
+  conflicts_with formula: "winprint"
+
   app "WinPrint.app"
+  binary "#{appdir}/WinPrint.app/Contents/Helpers/wp/wp"
 
   zap trash: [
     "~/Library/Application Support/WinPrint",

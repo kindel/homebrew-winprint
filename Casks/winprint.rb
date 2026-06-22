@@ -11,15 +11,15 @@
 # one on macOS. (Casks can't declare a `conflicts_with formula:`; that key is cask-only, so we just
 # document it here instead of encoding an invalid stanza.)
 cask "winprint" do
-  version "2.6.8"
+  version "2.6.9"
 
   on_arm do
-    url "https://github.com/tig/winprint/releases/download/v2.6.8/WinPrint-osx-arm64.app.zip"
-    sha256 "db8eb52a7003dd1116b0843e2c8b7e8a0f9a513134e8f1ac75818e48d5f56a2c"
+    url "https://github.com/tig/winprint/releases/download/v2.6.9/WinPrint-osx-arm64.app.zip"
+    sha256 "31bc13f8d63093165acf396a9992466fcef0770129813386b8af9a532dd96516"
   end
   on_intel do
-    url "https://github.com/tig/winprint/releases/download/v2.6.8/WinPrint-osx-x64.app.zip"
-    sha256 "4b2df3aac1adf75c8095c371a8226ffab49ef620f206dce94e9e8780c3551a39"
+    url "https://github.com/tig/winprint/releases/download/v2.6.9/WinPrint-osx-x64.app.zip"
+    sha256 "c45b44816e01d9ce9f4c175d9cfb5b87eb6a4d0cfb83e28f9e60555031c44387"
   end
 
   name "WinPrint"
@@ -28,6 +28,14 @@ cask "winprint" do
 
   app "WinPrint.app"
   binary "#{appdir}/WinPrint.app/Contents/Helpers/wp/wp"
+
+  # WinPrint.app is not yet Apple-notarized (tracked in tig/winprint#162), so Gatekeeper may
+  # report it as "damaged". Remove this caveat once notarization ships.
+  caveats <<~EOS
+    WinPrint.app is not yet notarized by Apple. If macOS says it "is damaged and can't be
+    opened", clear the download quarantine and reopen it:
+      xattr -dr com.apple.quarantine "#{appdir}/WinPrint.app"
+  EOS
 
   zap trash: [
     "~/Library/Application Support/WinPrint",

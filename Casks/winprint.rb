@@ -24,7 +24,6 @@ cask "winprint" do
   desc "Advanced source code and text file printing GUI (bundles the wp TUI)"
   homepage "https://github.com/kindel/winprint"
 
-  conflicts_with formula: "winprint"
 
   app "WinPrint.app"
   binary "#{appdir}/WinPrint.app/Contents/Helpers/wp/wp"

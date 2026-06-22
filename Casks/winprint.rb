@@ -4,15 +4,15 @@
 # notarized Developer ID build distributed directly (NOT the App Store). The TUI (`wp`) ships
 # separately as the Homebrew *formula*; `brew upgrade` handles updates for both.
 cask "winprint" do
-  version "2.6.4"
+  version "2.6.5"
 
   on_arm do
-    url "https://github.com/tig/winprint/releases/download/v2.6.4/WinPrint-osx-arm64.app.zip"
-    sha256 "f567d944e357882b805da2be8f0bb092d70335ce1db43fcb103be3117c1c7a13"
+    url "https://github.com/tig/winprint/releases/download/v2.6.5/WinPrint-osx-arm64.app.zip"
+    sha256 "86fbbfb4c997dd2f89f9aa63b238cc50f8d13ee14449c6f3a3e85e0a31f16f62"
   end
   on_intel do
-    url "https://github.com/tig/winprint/releases/download/v2.6.4/WinPrint-osx-x64.app.zip"
-    sha256 "30cc5acf1862cf8813b443441f5050b295e3e5540ec4e3bb3a707f88a60bf4f0"
+    url "https://github.com/tig/winprint/releases/download/v2.6.5/WinPrint-osx-x64.app.zip"
+    sha256 "237c93a2aab19e7468b068ed7fcab83d4c470a75181644d4fb2c9d3a5772622f"
   end
 
   name "WinPrint"

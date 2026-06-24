@@ -7,28 +7,28 @@
 class Winprint < Formula
   desc "Advanced source code and text file printing terminal UI"
   homepage "https://github.com/kindel/winprint"
-  version "2.6.14"
+  version "2.6.15"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/tig/winprint/releases/download/v2.6.14/wp-osx-arm64.tar.gz"
-      sha256 "737b7ddfe6ac7d9bdd7a972c2513bffff7d63a5064bec15c5e8a1dd5f34bf737"
+      url "https://github.com/tig/winprint/releases/download/v2.6.15/wp-osx-arm64.tar.gz"
+      sha256 "362881e8c2c3b6b503d218c34106ec89d78e44381ed8d9f8dd165661d46b7eb8"
     end
     on_intel do
-      url "https://github.com/tig/winprint/releases/download/v2.6.14/wp-osx-x64.tar.gz"
-      sha256 "09232b5770f0381049f2a87f58b736ba5181c3e7f95645fe589f1bbb02b7331a"
+      url "https://github.com/tig/winprint/releases/download/v2.6.15/wp-osx-x64.tar.gz"
+      sha256 "374cc44038a9373f317be873437e4190ad36b93c6e56c2dc3d41505580e9bc54"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/tig/winprint/releases/download/v2.6.14/wp-linux-arm64.tar.gz"
-      sha256 "e20297c8266ee06e44a07ff095c57c439694ed836932f10f2ee2e9c2ad0f8b0b"
+      url "https://github.com/tig/winprint/releases/download/v2.6.15/wp-linux-arm64.tar.gz"
+      sha256 "e1f9a6d4c86430a1eec39197234d1ad8a98ad7f42a50a1513471379f63aa13fb"
     end
     on_intel do
-      url "https://github.com/tig/winprint/releases/download/v2.6.14/wp-linux-x64.tar.gz"
-      sha256 "0bfadb976eeae6ff3c6d854848c282e963d5bd4252035df28affad26014c80c5"
+      url "https://github.com/tig/winprint/releases/download/v2.6.15/wp-linux-x64.tar.gz"
+      sha256 "e06cbc46d235d23c754df77c3d36fcd52a64a0d6055ee784f42c634522e79f3f"
     end
   end
 

@@ -5,21 +5,21 @@
 #
 # The GUI bundle ALSO embeds the `wp` TUI (release.yml copies the self-contained CLI payload into
 # WinPrint.app/Contents/Helpers/wp), so this single cask install delivers BOTH the GUI and the `wp`
-# command — the `binary` stanza below symlinks the embedded wp onto PATH. The standalone Homebrew
-# *formula* still ships `wp` for Linux and CLI-only installs. Both provide `wp`, so installing the
-# cask and the formula together collides on the `wp` symlink (Homebrew errors at link time) — pick
-# one on macOS. (Casks can't declare a `conflicts_with formula:`; that key is cask-only, so we just
-# document it here instead of encoding an invalid stanza.)
+# command — the `binary` stanza below symlinks the embedded wp onto PATH. `brew install winprint`
+# therefore installs everything a Mac user needs. The CLI-only `wp` *formula* still ships for Linux
+# and headless macOS; it also provides `wp`, so installing the cask AND the formula collides on the
+# `wp` symlink (Homebrew errors at link time) — pick one on macOS. (Casks can't declare a
+# `conflicts_with formula:`; that key is cask-only, so we just document it here.)
 cask "winprint" do
-  version "2.8.6"
+  version "2.8.7"
 
   on_arm do
-    url "https://github.com/tig/winprint/releases/download/v2.8.6/WinPrint-osx-arm64.app.zip"
-    sha256 "08cda1d8f18cf7ffea1f91c70b85268e91b1d2e6c9d47a174289d484f2ebec8d"
+    url "https://github.com/tig/winprint/releases/download/v2.8.7/WinPrint-osx-arm64.app.zip"
+    sha256 "db10b4e70a8e3dd8354b70332bcd5f784e3c86890349f5b44cb42f2f2588f254"
   end
   on_intel do
-    url "https://github.com/tig/winprint/releases/download/v2.8.6/WinPrint-osx-x64.app.zip"
-    sha256 "912aeca90b9c78f56fe8e97a57d65923d0b56d9ee82ef3b12d8525fc5856f3f7"
+    url "https://github.com/tig/winprint/releases/download/v2.8.7/WinPrint-osx-x64.app.zip"
+    sha256 "bcd26e7a333a0698a3404c9ac0955514d38910beb92f5bccc9fd58139224a1d8"
   end
 
   name "WinPrint"
@@ -28,14 +28,6 @@ cask "winprint" do
 
   app "WinPrint.app"
   binary "#{appdir}/WinPrint.app/Contents/Helpers/wp/wp"
-
-  # WinPrint.app is not yet Apple-notarized (tracked in tig/winprint#162), so Gatekeeper may
-  # report it as "damaged". Remove this caveat once notarization ships.
-  caveats <<~EOS
-    WinPrint.app is not yet notarized by Apple. If macOS says it "is damaged and can't be
-    opened", clear the download quarantine and reopen it:
-      xattr -dr com.apple.quarantine "#{appdir}/WinPrint.app"
-  EOS
 
   zap trash: [
     "~/Library/Application Support/WinPrint",

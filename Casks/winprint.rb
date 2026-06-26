@@ -11,15 +11,15 @@
 # one on macOS. (Casks can't declare a `conflicts_with formula:`; that key is cask-only, so we just
 # document it here instead of encoding an invalid stanza.)
 cask "winprint" do
-  version "2.8.5"
+  version "2.8.6"
 
   on_arm do
-    url "https://github.com/tig/winprint/releases/download/v2.8.5/WinPrint-osx-arm64.app.zip"
-    sha256 "b0139d9f0efc0dedacc4bd616b1b09c9e57cd6bbbf065ea9884b13b4710040c2"
+    url "https://github.com/tig/winprint/releases/download/v2.8.6/WinPrint-osx-arm64.app.zip"
+    sha256 "08cda1d8f18cf7ffea1f91c70b85268e91b1d2e6c9d47a174289d484f2ebec8d"
   end
   on_intel do
-    url "https://github.com/tig/winprint/releases/download/v2.8.5/WinPrint-osx-x64.app.zip"
-    sha256 "4ebd8a89146828a33246240ee424f49e0dfd8d39adb2c19a8364ae5e163d2581"
+    url "https://github.com/tig/winprint/releases/download/v2.8.6/WinPrint-osx-x64.app.zip"
+    sha256 "912aeca90b9c78f56fe8e97a57d65923d0b56d9ee82ef3b12d8525fc5856f3f7"
   end
 
   name "WinPrint"

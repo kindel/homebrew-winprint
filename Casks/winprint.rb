@@ -1,7 +1,9 @@
 # Template rendered by the release pipeline (release.yml -> brew job) and pushed to the
 # kindel/homebrew-winprint tap. Placeholders are filled with each stable release's version,
-# download base URL, and per-arch SHA256s. This is the free MAUI GUI (WinPrint.app), a
-# notarized Developer ID build distributed directly (NOT the App Store).
+# download base URL, and per-arch SHA256s. This is the free MAUI GUI (WinPrint.app),
+# distributed directly (NOT the App Store). NOTE: the app is NOT notarized today — the
+# Apple signing secrets (APPLE_*) aren't configured (tracked in #162), so it ships as an
+# unsigned/ad-hoc build and macOS Gatekeeper quarantine applies on first launch.
 #
 # The GUI bundle ALSO embeds the `wp` TUI (release.yml copies the self-contained CLI payload into
 # WinPrint.app/Contents/Helpers/wp), so this single cask install delivers BOTH the GUI and the `wp`
@@ -11,20 +13,20 @@
 # `wp` symlink (Homebrew errors at link time) — pick one on macOS. (Casks can't declare a
 # `conflicts_with formula:`; that key is cask-only, so we just document it here.)
 cask "winprint" do
-  version "2.8.8"
+  version "2.8.9"
 
   on_arm do
-    url "https://github.com/tig/winprint/releases/download/v2.8.8/WinPrint-osx-arm64.app.zip"
-    sha256 "846f7bad25529f19259e9bf72bd50952bf0987e8b665505e9b17067fbce6dd8b"
+    url "https://github.com/tig/winprint/releases/download/v2.8.9/WinPrint-osx-arm64.app.zip"
+    sha256 "2e3acbe78143a65aaf82f2793658f89eb5dc7bb01d4d9927cf6df2ba6a5f86c4"
   end
   on_intel do
-    url "https://github.com/tig/winprint/releases/download/v2.8.8/WinPrint-osx-x64.app.zip"
-    sha256 "e30c3ac9b95f4c11116904caf7247ca651a7ec713fbf920a953cc1043cbc43af"
+    url "https://github.com/tig/winprint/releases/download/v2.8.9/WinPrint-osx-x64.app.zip"
+    sha256 "7cb7988299e54d2ffbbf7bc1968275d3c77de65c6e4044ed1a1567463cfa0e31"
   end
 
   name "WinPrint"
   desc "Advanced source code and text file printing GUI (bundles the wp TUI)"
-  homepage "https://github.com/kindel/winprint"
+  homepage "https://github.com/tig/winprint"
 
   app "WinPrint.app"
   binary "#{appdir}/WinPrint.app/Contents/Helpers/wp/wp"

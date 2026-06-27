@@ -10,29 +10,29 @@
 # Both provide the `wp` symlink, so installing this formula AND the cask collides — pick one on macOS.
 class Wp < Formula
   desc "Advanced source code and text file printing terminal UI"
-  homepage "https://github.com/kindel/winprint"
-  version "2.8.8"
+  homepage "https://github.com/tig/winprint"
+  version "2.8.9"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/tig/winprint/releases/download/v2.8.8/wp-osx-arm64.tar.gz"
-      sha256 "a357af8441b722623cb8255ca057efab89fbdcb6a2ee7fad99f21683827ad35e"
+      url "https://github.com/tig/winprint/releases/download/v2.8.9/wp-osx-arm64.tar.gz"
+      sha256 "8ac3be44dce4042acd1de4ee900b24047e32b6e709ccaf5eb67c00e502241dfe"
     end
     on_intel do
-      url "https://github.com/tig/winprint/releases/download/v2.8.8/wp-osx-x64.tar.gz"
-      sha256 "cdf3a22ade464c89882282dffbd1595001c7b4e5e41b799eb1d2adce7e99ca51"
+      url "https://github.com/tig/winprint/releases/download/v2.8.9/wp-osx-x64.tar.gz"
+      sha256 "02b8c4da9bc2abd3eb030857a4b2ddce9d0c0bf054f0cab42b56b89d208f212c"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/tig/winprint/releases/download/v2.8.8/wp-linux-arm64.tar.gz"
-      sha256 "74990c964e916a20fcc38a7d601216dd1a7225735493d7939769df67163950c1"
+      url "https://github.com/tig/winprint/releases/download/v2.8.9/wp-linux-arm64.tar.gz"
+      sha256 "7bbef9d16d2b6df6fa0bbb8e0f5802d55f5a0c2cb66b1ae3b6a4a45deb32a86f"
     end
     on_intel do
-      url "https://github.com/tig/winprint/releases/download/v2.8.8/wp-linux-x64.tar.gz"
-      sha256 "0c291c7453e9254d11dff0016e613b2f81910d381cee07b5c951e162bba38c20"
+      url "https://github.com/tig/winprint/releases/download/v2.8.9/wp-linux-x64.tar.gz"
+      sha256 "d5d5c0633310aa07cd3de97c53503e8c0ed6ad00b5b0f0b81dafeb8df402f1d4"
     end
   end
 

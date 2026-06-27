@@ -11,28 +11,28 @@
 class Wp < Formula
   desc "Advanced source code and text file printing terminal UI"
   homepage "https://github.com/kindel/winprint"
-  version "2.8.7"
+  version "2.8.8"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/tig/winprint/releases/download/v2.8.7/wp-osx-arm64.tar.gz"
-      sha256 "8fa968ffc6dcd87ba84043e777736ff9b7870a293de63c638495460ab364b480"
+      url "https://github.com/tig/winprint/releases/download/v2.8.8/wp-osx-arm64.tar.gz"
+      sha256 "a357af8441b722623cb8255ca057efab89fbdcb6a2ee7fad99f21683827ad35e"
     end
     on_intel do
-      url "https://github.com/tig/winprint/releases/download/v2.8.7/wp-osx-x64.tar.gz"
-      sha256 "9db0c259d16e543b329332dc5cbfe697938d6c9dd81ba44011d2d6611151b023"
+      url "https://github.com/tig/winprint/releases/download/v2.8.8/wp-osx-x64.tar.gz"
+      sha256 "cdf3a22ade464c89882282dffbd1595001c7b4e5e41b799eb1d2adce7e99ca51"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/tig/winprint/releases/download/v2.8.7/wp-linux-arm64.tar.gz"
-      sha256 "f46f813ec995eb8a65dd9c29dcd6aa9823dde5c829a042a1cb58edc0acf133ce"
+      url "https://github.com/tig/winprint/releases/download/v2.8.8/wp-linux-arm64.tar.gz"
+      sha256 "74990c964e916a20fcc38a7d601216dd1a7225735493d7939769df67163950c1"
     end
     on_intel do
-      url "https://github.com/tig/winprint/releases/download/v2.8.7/wp-linux-x64.tar.gz"
-      sha256 "8a7b2976f38647e59a4fe77924be88cb8cede4ab2d4763d26b2926c31d2a2736"
+      url "https://github.com/tig/winprint/releases/download/v2.8.8/wp-linux-x64.tar.gz"
+      sha256 "0c291c7453e9254d11dff0016e613b2f81910d381cee07b5c951e162bba38c20"
     end
   end
 

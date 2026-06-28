@@ -1,9 +1,9 @@
 # Template rendered by the release pipeline (release.yml -> brew job) and pushed to the
 # kindel/homebrew-winprint tap. Placeholders are filled with each stable release's version,
 # download base URL, and per-arch SHA256s. This is the free MAUI GUI (WinPrint.app),
-# distributed directly (NOT the App Store). NOTE: the app is NOT notarized today — the
-# Apple signing secrets (APPLE_*) aren't configured (tracked in #162), so it ships as an
-# unsigned/ad-hoc build and macOS Gatekeeper quarantine applies on first launch.
+# distributed directly (NOT the App Store). The app is signed with an Apple Developer ID and
+# notarized + stapled by the release pipeline (the APPLE_* secrets are configured), so Gatekeeper
+# accepts it without a quarantine workaround.
 #
 # The GUI bundle ALSO embeds the `wp` TUI (release.yml copies the self-contained CLI payload into
 # WinPrint.app/Contents/Helpers/wp), so this single cask install delivers BOTH the GUI and the `wp`
@@ -13,15 +13,15 @@
 # `wp` symlink (Homebrew errors at link time) — pick one on macOS. (Casks can't declare a
 # `conflicts_with formula:`; that key is cask-only, so we just document it here.)
 cask "winprint" do
-  version "3.0.2"
+  version "3.0.3"
 
   on_arm do
-    url "https://github.com/tig/winprint/releases/download/v3.0.2/WinPrint-osx-arm64.app.zip"
-    sha256 "b837f2c3afd9156bbc88e54891a37f51fb9fdff32e3ad14d6374fb2f08e950c6"
+    url "https://github.com/tig/winprint/releases/download/v3.0.3/WinPrint-osx-arm64.app.zip"
+    sha256 "f4a7318beea793ef009c2c2802e72abe4eb905167003d9af4785d69bcdacb74d"
   end
   on_intel do
-    url "https://github.com/tig/winprint/releases/download/v3.0.2/WinPrint-osx-x64.app.zip"
-    sha256 "7d8c1e6ea57988e1ece96eb572b2699f1e90932a9650478c76b20a5b66e6a9aa"
+    url "https://github.com/tig/winprint/releases/download/v3.0.3/WinPrint-osx-x64.app.zip"
+    sha256 "614910a4132c9c4c502b708a4b938f466588ebd9cdecac32ec964dceac50a420"
   end
 
   name "WinPrint"

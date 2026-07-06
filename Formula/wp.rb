@@ -11,28 +11,28 @@
 class Wp < Formula
   desc "Advanced source code and text file printing terminal UI"
   homepage "https://github.com/tig/winprint"
-  version "3.0.11"
+  version "3.0.12"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/tig/winprint/releases/download/v3.0.11/wp-osx-arm64.tar.gz"
-      sha256 "07cc904f895bb794d4417574c003763951c12f3249356b078d9f02620db454b9"
+      url "https://github.com/tig/winprint/releases/download/v3.0.12/wp-osx-arm64.tar.gz"
+      sha256 "64a87184ed931fac6bc01d5bc20b0d5a357a34ae4891e70aabb81ba485006b1a"
     end
     on_intel do
-      url "https://github.com/tig/winprint/releases/download/v3.0.11/wp-osx-x64.tar.gz"
-      sha256 "9076918383a1ab8e4ff657f3092e067e4874582d58a63e606d82bab594b14466"
+      url "https://github.com/tig/winprint/releases/download/v3.0.12/wp-osx-x64.tar.gz"
+      sha256 "9b4d053fcdab2185fb385018eb91e4513a61215a81516996018b7384826ef692"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/tig/winprint/releases/download/v3.0.11/wp-linux-arm64.tar.gz"
-      sha256 "7f7d609be835db95a84b7d08c3885d51f859dcd43cedb1c3c855c481f36158c2"
+      url "https://github.com/tig/winprint/releases/download/v3.0.12/wp-linux-arm64.tar.gz"
+      sha256 "d9d5788c1c3c597c0de517f596948ba23c73f35cd64994b0ad36385bdff4475e"
     end
     on_intel do
-      url "https://github.com/tig/winprint/releases/download/v3.0.11/wp-linux-x64.tar.gz"
-      sha256 "3eed6dd048096bac8a04088f6ed344e6d8c7fbeb1239e98cc8995ab986bf9fea"
+      url "https://github.com/tig/winprint/releases/download/v3.0.12/wp-linux-x64.tar.gz"
+      sha256 "a9da123101fb98dcd61ecdf993af0d49a402b3eb6db824bfc6b1e6aa23d8d1fa"
     end
   end
 
@@ -50,6 +50,12 @@ class Wp < Formula
   # pour-testing its bottle file in the release `brew` job. The block below is rendered + built +
   # uploaded by .github/workflows/release.yml; the sentinel markers let that job strip it to build
   # the bottle from source first. Do not hand-edit the SHA.
+  # >>> winprint:bottle (rendered by release.yml — do not hand-edit)
+  bottle do
+    root_url "https://github.com/tig/winprint/releases/download/v3.0.12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "8b60ee9ceb98060f871584447d45f77e8c2e114fca0e8dd203b204645a1d6144"
+  end
+  # <<< winprint:bottle
 
   def install
     # Drop the separated debug-symbol file (wp.dbg) before installing. It is useless to end

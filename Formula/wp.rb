@@ -50,12 +50,6 @@ class Wp < Formula
   # pour-testing its bottle file in the release `brew` job. The block below is rendered + built +
   # uploaded by .github/workflows/release.yml; the sentinel markers let that job strip it to build
   # the bottle from source first. Do not hand-edit the SHA.
-  # >>> winprint:bottle (rendered by release.yml — do not hand-edit)
-  bottle do
-    root_url "https://github.com/tig/winprint/releases/download/v3.0.11"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "957795ddc14278e0b1fcf22c944f50501d8e82f011a2cfcfd592893dab6462c4"
-  end
-  # <<< winprint:bottle
 
   def install
     # Drop the separated debug-symbol file (wp.dbg) before installing. It is useless to end

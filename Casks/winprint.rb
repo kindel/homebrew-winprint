@@ -13,15 +13,15 @@
 # `wp` symlink (Homebrew errors at link time) — pick one on macOS. (Casks can't declare a
 # `conflicts_with formula:`; that key is cask-only, so we just document it here.)
 cask "winprint" do
-  version "3.0.12"
+  version "3.0.13"
 
   on_arm do
-    url "https://github.com/tig/winprint/releases/download/v3.0.12/WinPrint-osx-arm64.app.zip"
-    sha256 "b7f6f77b0d6b81784114ee8e45a435878050fff460bf3a65e076a9e4406ae9b4"
+    url "https://github.com/tig/winprint/releases/download/v3.0.13/WinPrint-osx-arm64.app.zip"
+    sha256 "69c4c38a36ee7b87d5569674a0d79f54e32844b4446af9afc07d849ad1c47ad2"
   end
   on_intel do
-    url "https://github.com/tig/winprint/releases/download/v3.0.12/WinPrint-osx-x64.app.zip"
-    sha256 "c58e209bf7126ff4dcf195a4f35e254fad8f2a483a6fadfeeada0bc554ea4c2d"
+    url "https://github.com/tig/winprint/releases/download/v3.0.13/WinPrint-osx-x64.app.zip"
+    sha256 "a9079fb807dee5f58b2162ee564fdc544d80018a9c66bdd89e5e57cc5217c84a"
   end
 
   name "WinPrint"

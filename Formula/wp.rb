@@ -11,28 +11,28 @@
 class Wp < Formula
   desc "Advanced source code and text file printing terminal UI"
   homepage "https://github.com/tig/winprint"
-  version "3.1.1"
+  version "3.1.2"
   license "MIT"
 
   on_macos do
     on_arm do
-      url "https://github.com/tig/winprint/releases/download/v3.1.1/wp-osx-arm64.tar.gz"
-      sha256 "cd0f30a242a0fddfa8fa667ff85201771126434a9c8b81421ab4760d13666f8d"
+      url "https://github.com/tig/winprint/releases/download/v3.1.2/wp-osx-arm64.tar.gz"
+      sha256 "4d14b17a14d9f978d0f002bae42af76a390b2966d2a00103d09c6b3f898eed81"
     end
     on_intel do
-      url "https://github.com/tig/winprint/releases/download/v3.1.1/wp-osx-x64.tar.gz"
-      sha256 "dacbfa8ff12d1d7775ee703bfe39aba47f41efaba27e65f632f182fa9a913515"
+      url "https://github.com/tig/winprint/releases/download/v3.1.2/wp-osx-x64.tar.gz"
+      sha256 "94e295f32eae7b507c26b1bf2f7d2323f91917a0d706924bd321c45044974faf"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/tig/winprint/releases/download/v3.1.1/wp-linux-arm64.tar.gz"
-      sha256 "ba339a94361a5004fcd6e61492f0f8e83eadf0f69352a17b0b5d91e8d439c2d7"
+      url "https://github.com/tig/winprint/releases/download/v3.1.2/wp-linux-arm64.tar.gz"
+      sha256 "3a90a10061b66dccede6398b9a38388a2acca1c9505b01057c373157f5cdbf71"
     end
     on_intel do
-      url "https://github.com/tig/winprint/releases/download/v3.1.1/wp-linux-x64.tar.gz"
-      sha256 "d2637c40ff0c32939f723817632ac5666bfc68e5be1a8b63bd2a5842237cfefe"
+      url "https://github.com/tig/winprint/releases/download/v3.1.2/wp-linux-x64.tar.gz"
+      sha256 "aefecc72e3d10fbeb8696401f1cd03fafd3a591c2b5155371a8617f6b100d1a7"
     end
   end
 
@@ -52,8 +52,8 @@ class Wp < Formula
   # the bottle from source first. Do not hand-edit the SHA.
   # >>> winprint:bottle (rendered by release.yml — do not hand-edit)
   bottle do
-    root_url "https://github.com/tig/winprint/releases/download/v3.1.1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux: "35d2fbeb5b31dc2f24992c26da125343fa44da4fd881a753a1601fa1bbe91aad"
+    root_url "https://github.com/tig/winprint/releases/download/v3.1.2"
+    sha256 cellar: :any_skip_relocation, x86_64_linux: "9f70a4e484a28331ce712e13232fe3c55420f8dea4e80a19f8c04a4b1c2e9fc3"
   end
   # <<< winprint:bottle
 
